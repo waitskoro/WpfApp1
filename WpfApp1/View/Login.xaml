@@ -1,0 +1,57 @@
+﻿<Window x:Class="WpfApp1.View.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="300" Width="450">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Column="2" 
+                Content="Регистрация" 
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Top" 
+                BorderBrush="White"
+                Margin="10"
+                Command="{Binding RegistrationCommand}">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <TextBox Name ="LoginUser" 
+                 Grid.Row="1" 
+                 Grid.Column="1" 
+                 VerticalAlignment="Top" 
+                 Margin="10" 
+                 Height="25"
+                 Text="{Binding Login}"/>
+        <PasswordBox Name="PasswordPBox" Grid.Row="1" 
+                     Grid.Column="1" 
+                     VerticalAlignment="Bottom" 
+                     Margin="10" 
+                     Height="25"/>
+        <Button Name="Enter"
+                Grid.Column="1" 
+                Grid.Row="2" 
+                Content="Войти" 
+                Margin="15,30,15,30" 
+                Background="#FF7D7DED" 
+                FontWeight="Normal" 
+                Foreground="White" 
+                Command="{Binding LoginCommand}" 
+                CommandParameter="{Binding ElementName=PasswordPBox}"
+/>
+
+    </Grid>
+</Window>
